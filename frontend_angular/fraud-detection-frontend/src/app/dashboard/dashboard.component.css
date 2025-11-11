@@ -1,0 +1,114 @@
+/* src/app/pages/dashboard/dashboard.component.css */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #0b132b, #1b263b);
+  color: #e2e8f0;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* Title */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+/* --- Stats Grid --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: #f8fafc;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+}
+
+.gradient-red {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.gradient-yellow {
+  background: linear-gradient(135deg, #f59e0b, #fcd34d);
+}
+
+.big {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+}
+
+/* --- Top Rules Table --- */
+.card {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #93c5fd;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 6px rgba(147, 197, 253, 0.4);
+}
+
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rules-table th,
+.rules-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  text-align: left;
+}
+
+.rules-table th {
+  color: #93c5fd;
+  font-weight: 600;
+  background: rgba(30, 41, 59, 0.6);
+}
+
+.rules-table tr:hover {
+  background: rgba(56, 189, 248, 0.07);
+  transition: background 0.2s ease;
+}
+
+/* --- Utility Classes --- */
+.muted {
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error {
+  color: #f87171;
+  text-align: center;
+  margin-bottom: 1rem;
+}

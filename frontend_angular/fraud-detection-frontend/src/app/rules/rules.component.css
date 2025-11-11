@@ -1,0 +1,183 @@
+/* src/app/pages/rules/rules.component.css */
+
+.rules-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #0b132b, #1b263b);
+  color: #e2e8f0;
+  padding: 1.5rem 2rem;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Title */
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #38bdf8;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+  letter-spacing: 0.5px;
+}
+
+/* --- Form Section --- */
+.form-card {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 10px;
+  border: none;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
+}
+
+.form-card:hover {
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+}
+
+.form-title {
+  color: #93c5fd;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 8px rgba(147, 197, 253, 0.3);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.8rem;
+}
+
+.form-card label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.form-card input,
+.form-card select {
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  border: none;
+  background: rgba(30, 41, 59, 0.9);
+  color: #f8fafc;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+  outline: none;
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
+}
+
+/* Add Rule Button */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+
+.add-btn {
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+}
+
+.add-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* --- Rules Table --- */
+.table-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 10px;
+  border: none;
+  padding: 1.2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #e2e8f0;
+}
+
+.rules-table th,
+.rules-table td {
+  text-align: left;
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  font-size: 0.9rem;
+}
+
+.rules-table th {
+  color: #93c5fd;
+  font-weight: 600;
+  background: rgba(30, 41, 59, 0.4);
+}
+
+.rules-table tr:hover {
+  background: rgba(56, 189, 248, 0.07);
+  transition: background 0.2s ease;
+}
+
+.rules-table pre {
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: linear-gradient(90deg, #ef4444, #b91c1c);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.85rem;
+}
+
+.delete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+/* Utility */
+.muted {
+  color: #94a3b8;
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #f87171;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+}

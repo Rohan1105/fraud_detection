@@ -1,0 +1,81 @@
+/* src/styles.css */
+
+/* Reset all default margins & paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make the whole app dark-themed */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at top left, #0b132b, #1b263b);
+  background-attachment: fixed;
+  color: #e2e8f0;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Root Angular container */
+app-root {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top left, #0b132b, #1b263b);
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar consistency */
+nav,
+.navbar {
+  background: rgba(10, 20, 40, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* General page wrappers */
+.page,
+.rules-page,
+.transactions-page,
+.dashboard-page {
+  background: transparent;
+  border: none;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+}
+
+/* Fix any stray white gaps */
+body,
+app-root,
+.page,
+.dashboard-page,
+.rules-page,
+.transactions-page {
+  border: none;
+  outline: none;
+}
+
+/* Hide scrollbar background glare */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b132b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
