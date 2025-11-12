@@ -6,10 +6,10 @@ export class Transaction {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ name: 'customerid' })
   customerId: number;
 
-  @Column({ unique: true })
+  @Column({ name: 'txnid' })
   txnId: string;
 
   @Column({ 

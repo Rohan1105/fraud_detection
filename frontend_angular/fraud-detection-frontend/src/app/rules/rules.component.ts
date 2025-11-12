@@ -20,8 +20,9 @@ const RULE_TYPES: Record<string, { example: object }> = {
 })
 export class RulesComponent implements OnInit {
   RULE_TYPES: any = {
-    threshold: { example: { limit: 1000 } },
-    pattern: { example: { regex: '[A-Z]{3}' } }
+    amount_limit: { example: { maxAmount: 1000 } },
+    merchant_blacklist: { example: { merchants: ["Merchant_86"] } },
+    odd_hours: { example: { startHour: 0, endHour: 6 } },
   };
 
   JSON = JSON;

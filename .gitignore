@@ -1,6 +1,8 @@
 # compiled output
 /backend/dist
 /backend/node_modules
+/backend/src/migrations
+/backend/src/data-source.ts
 /frontend_angular/node_modules
 /build
 

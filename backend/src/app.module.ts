@@ -23,7 +23,7 @@ import { FraudModule } from './modules/fraud/fraud.module';
       password: 'ts_pass',
       database: 'ts_db',
       autoLoadEntities: true, // auto-load entities
-      synchronize: true, // dev only, auto-create tables
+      synchronize: false, // dev only, auto-create tables
     }),
 
     // Redis connection
