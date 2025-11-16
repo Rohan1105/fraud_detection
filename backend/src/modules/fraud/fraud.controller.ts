@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get,Param,Query } from '@nestjs/common';
 import { FraudService } from './fraud.service';
 
 @Controller('api/fraud')
@@ -14,4 +14,19 @@ export class FraudController {
   async getSummary() {
     return this.fraudService.getSummary();
   }
+
+  @Get('summary/daily-stats')
+  async getSummaryDaily( 
+    @Query('from') from?: string
+  ){
+    return this.fraudService.getSummaryDaily(from);
+  }
+
+  @Get('summary/mcc-stats')
+  async getSummaryMcc( 
+    @Query('mcc') mcc?: string
+  ){
+    return this.fraudService.getSummaryMcc(mcc);
+  }
+
 }

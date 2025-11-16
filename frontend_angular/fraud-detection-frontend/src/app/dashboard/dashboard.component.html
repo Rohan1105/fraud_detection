@@ -1,49 +1,69 @@
-<!-- src/app/pages/dashboard/dashboard.component.html -->
 <div class="dashboard-page">
   <h1 class="page-title">📊 Fraud Detection Dashboard</h1>
 
-  <!-- Loading and error states -->
+  <!-- Status -->
   <p *ngIf="loading" class="muted">Loading analytics...</p>
   <p *ngIf="error" class="error">{{ error }}</p>
 
   <!-- Summary Cards -->
-  <div *ngIf="stats" class="stats-grid">
-    <div class="stat-card gradient-blue">
+  <div class="stats-grid" *ngIf="stats">
+    <div class="stat-blue-card gradient-blue">
       <h3>Total Transactions</h3>
-      <p class="big">{{ stats?.totalTransactions }}</p>
+      <p class="big">{{ stats.totalTransactions }}</p>
     </div>
 
-    <div class="stat-card gradient-red">
-      <h3>Fraudulent Transactions</h3>
-      <p class="big">{{ stats?.fraudCount }}</p>
+    <div class="stat-red-card gradient-red">
+      <h3>Fraud Transactions</h3>
+      <p class="big">{{ stats.fraudCount }}</p>
     </div>
 
-    <div class="stat-card gradient-yellow">
+    <div class="stat-yellow-card gradient-yellow">
       <h3>Fraud Percentage</h3>
-      <p class="big">{{ stats?.fraudPercentage?.toFixed(2) }}%</p>
+      <p class="big">{{ stats.fraudPercentage.toFixed(2) }}%</p>
     </div>
   </div>
 
-  <!-- Top Triggered Rules -->
-  <div *ngIf="stats?.topRules?.length" class="card top-rules">
-    <h3 class="subtitle">🔥 Top Triggered Rules</h3>
+  <!-- 🔥 Filters + Main Chart Side-by-Side -->
+  <div class="chart-flex-row">
 
-    <table class="rules-table">
-      <thead>
-        <tr>
-          <th>Rule</th>
-          <th>Triggered Count</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let r of stats?.topRules">
-          <td>{{ r?.rule }}</td>
-          <td>{{ r?.count }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Filters (Left Side) -->
+    <div class="filter-panel">
+      <div class="filter-group">
+        <label>Select MCC</label>
+        <select [(ngModel)]="selectedMcc" (change)="reloadMccStats()">
+          <option *ngFor="let m of mccList" [value]="m">{{ m }}</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Select Date</label>
+        <input type="date" [(ngModel)]="selectedDate" (change)="reloadDailyStats()" />
+      </div>
+
+    </div>
+
+    <!-- Chart (Right Side) -->
+    <div class="card chart-card chart-large">
+      <h3 class="subtitle">
+        {{ activeChart === 'daily'
+          ? '📅 Fraud Stats for ' + dailyStats?.date
+          : '🏷️ ' + mccStats?.mcc + ' Fraud Breakdown'
+        }}
+      </h3>
+
+      <div class="chart-container">
+        <canvas id="mainChart"></canvas>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Empty Fallback -->
-  <p *ngIf="!loading && !stats" class="muted">No data available yet.</p>
+  <!-- Fraud Ratio (Full Width Below) -->
+  <div class="card chart-card" *ngIf="stats">
+    <h3 class="subtitle">🧮 Clean Ratio ({{cleanRatio}} %)</h3>
+    <div class="chart-container">
+      <canvas id="fraudRatioChart"></canvas>
+    </div>
+  </div>
+
 </div>
